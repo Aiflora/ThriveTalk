@@ -5,7 +5,9 @@
 }
 
 body{
+    height: 100%;
     background-color: white; 
+    line-height: 1;
 }
 
 ul li{
@@ -22,45 +24,114 @@ img{
     max-height: 100%;
 }
 
-.container{
-    max-width:1400px;
-    min-width: 250px;
-    max-height: 1400px;
-    min-height: 210px;
-    width: 80%;
-    height: 60%;
-    background-color: #c0d184;
+.wrapper{
+    overflow: hidden;
     display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
-.header_nav{
-    display: flex;
-    color: #22356F;
-    font-size: 14px;
-    font-family:'Roboto', sans-serif;
-    font-weight: 500;
+.main{
+    flex: 1 1 auto;
+}
+/*------------------------------------------------------------------------ */
+[class*="__container"]{
+    margin: 0 auto;
+    max-width:1147px;
+    padding: 0 15px;
 }
 
-.header_btn{
-    width: 150px;
-    height: 50px;
-    border: 1px solid #62D0DF;
-    border-radius: 50px;
-    background-color:#62D0DF;
+/* PC */
+@media (max-width:1147px){
+    [class*="__container"]{
+        max-width: 970px;
+    }
+}
+
+/* TABLET */
+@media (max-width:991.98px){
+    [class*="__container"]{
+        max-width: 750px;
+    }
+}
+
+/* MOBILE*/
+@media (max-width:1147px){
+    [class*="__container"]{
+        max-width: 970px;
+    }
+}
+
+
+/* ----------------------------------------------------------------------- */
+
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+}
+
+.header__container{
     display: flex;
-    justify-content: center;
+    min-height: 77px;
     align-items: center;
 }
 
-.header_btn button{
-    border: transparent;
+.header__logo{
+    max-width:200px;
 }
 
-.header_btn span{
-    background-color:#62D0DF;
-    color: #FFF;
-    font-size: 14px;
-    font-family:'Roboto', sans-serif;
-    font-weight: 700;
+.header__menu{
+    flex: 1 1 auto;
+}
 
+.header_button{
+    flex: 0 0 200px;
+    display: flex;
+}
+
+@media (max-width:991.98px){
+    .header_button{
+        flex: 0 0 100px;
+    }
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+}
+
+.menu__list{
+    display: flex;
+
+}
+
+.menu__items{
+    margin-right: 30px;
+}
+
+.menu__link{
+    color: #22356F;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    line-height: 0%;
+}
+
+.button{
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #FFF;
+    padding: 20px 30px;
+    border-radius: 50px;
+    background: #62D0DF;
+    transition: background 1s ease 1s;
+}
+
+.button :hover{
+    background: #27b160;
 }
